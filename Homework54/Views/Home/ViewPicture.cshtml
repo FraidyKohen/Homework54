@@ -1,0 +1,29 @@
+﻿@model ViewPictureViewModel
+
+
+<div class="d-flex justify-content-center mb-4">
+    <img src="/uploads/@Model.Picture.Title" style="max-height:450px" />
+</div>
+<div class="d-flex justify-content-center mb-4">
+    <h3>@Model.Picture.Title.Substring(37, Model.Picture.Title.Length-41)</h3>
+</div>
+<br />
+<div class="d-flex justify-content-center mb-4">
+    @if (Model.PreviouslyLiked)
+    {
+        <button class="btn btn-info" disabled id="like-button" data-picture-id="@Model.Picture.Id">Like</button>
+    }
+    else
+    {
+    <button class="btn" id="like-button" data-picture-id="@Model.Picture.Id">
+            <i class="bi bi-hand-thumbs-up" style="height:40px"></i>
+    </button>
+    }
+    <h6 class="form-label" id="likes-label">@Model.Picture.Likes Likes</h6>
+</div>
+
+
+@section Scripts
+    {
+    <script src="~/js/viewpicture.js"></script>
+}

@@ -1,0 +1,22 @@
+﻿@model IndexViewModel
+
+<h1>Pictures</h1>
+<div class="container" style="justify-content:center">
+
+    @foreach (var p in Model.Pictures)
+    {
+        <a href="/home/viewPicture?pictureId=@p.Id">
+            <div style="justify-items:center">
+                <img src="/uploads/@p.Title" style="max-height: 200px;" />
+                <h5>@p.Title.Substring(37)</h5>
+                <div class="form-outline me-3" style="width: 14rem; justify-self:center">
+                </div>
+            </div>
+        </a>
+        <br />
+        <br />
+        <br />
+    }
+
+</div>
+
